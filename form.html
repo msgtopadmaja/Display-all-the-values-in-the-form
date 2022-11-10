@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+ 
+<head>
+    <script type="text/javascript">
+        function getOption() {
+            selectElement = document.querySelector('#select1');
+            output = selectElement.options[selectElement.selectedIndex].value;
+            document.querySelector('.output').textContent = output;
+        }
+    </script>
+</head>
+ 
+<body>
+    <form>
+        <div>
+            <label>Select your city</label>
+            <select id="select1">
+                <option value="bangalore">Bangalore</option>
+                <option value="tamilnadu">TamilNadu</option>
+                <option value="usa">USA</option>
+            </select>
+            <p> The value of the option selected is:
+                <span class="output"></span></p>
+            <button onclick="getOption()">Your City</button>
+        </div>
+    </form> 
+
+</body>
+ 
+</html>
