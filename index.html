@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script type="text/javascript">
+        function callvalue() {
+            var fullName= document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirmpassword").value;
+            var male = document.getElementById("male");
+            var female = document.getElementById("female");
+            var other = document.getElementById("other");
+            document.writeln("Your information: "+"<br>"+"your name: " +fullName+"<br>");
+            document.writeln("your email: "+email+"<br>");
+            document.writeln("your password" + password +"<br>");
+            document.writeln("your confirm password: "+confirm_password +"<br>");
+             
+            if(male.Checked ==true) {
+                document.writeln("your gender is: "+male.value);
+             }
+
+            else if(female.checked == true) {
+                document.writeln("your gender is: "+female.value);
+            }
+
+            else if(other.checked == true) {
+                documet.writeln("your gender is: "+other.value);
+            }
+            else {
+                document.writeln("yor gender is not selected");
+            }
+        }
+
+        function validate() {
+        
+        if(document.form.city.selectedIndex=="") {
+            alert ( "Please select city!");
+            return false;
+        }
+        var sel = document.getElementById("city");
+//get the selected option
+       var selectedText = sel.options[sel.selectedIndex].text;
+       alert("You have selected : "+selectedText);
+       return true;
+     }
+
+    </script>
+</head>
+<body>
+    <form name="form" onsubmit="callvalue()">
+        <h1  style="text-align:center">Form</h1>
+        <div>
+            <label>FullName:</label>
+            <input type="text" id="fullname"/>
+        </div><br>
+        <div>
+            <label>Email:</label>
+            <input type="email" id="email"/>
+        </div><br>
+        <div>
+            <label>Password:</label>
+            <input type="password" id="password"/>
+        </div><br>
+        <div>
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmpassword"/>
+        </div><br>
+        <div>
+            <label>Gender:</label><br>
+            <input type="radio" name="male "value="male" id="male">Male</input>
+            <input type="radio" name="female" value="female" id="female">Female</input>
+            <input type="radio" name="other" value="other" id="other">Other</input>
+        </div><br>
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
